@@ -1,6 +1,6 @@
 import React from "react";
 import Home from "./Home/Home";
-import Books from "./Components/Books";
+import Books from "./Books/Books";
 import { Route, Routes } from "react-router";
 
 function App() {

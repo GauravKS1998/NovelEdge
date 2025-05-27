@@ -1,13 +1,13 @@
 [
     {
-        "img": "https://static.wikia.nocookie.net/ascendance-of-a-bookworm/images/6/6f/LN_P1V1-CoverEN.jpg/revision/latest/scale-to-width-down/1000?cb=20210416220322",
+        "img": "/bookImages/aob1_1.png",
         "genre": ["Fantasy", "School", "Magic", "Isekai"],
         "title": "Ascendance Of A Bookworm",
         "synopsis": "A certain college girl who's loved books ever since she was a little girl dies in an accident and is reborn in another world she knows nothing about. She is now Myne, the sickly five-year-old daughter of a poor soldier. To make things worse, the world she's been reborn in has a very low literacy rate and books mostly don't exist. She'd have to pay an enormous amount of money to buy one. Myne resolves herself: If there aren't any books, she'll just have to make them! Her goal is to become a librarian. This story begins with her quest to make books so she can live surrounded by them! Dive into this biblio-fantasy written for book lovers and bookworms!",
         "author": "Miya Kazuki",
         "volumes": [
             {
-                "img": "https://static.wikia.nocookie.net/ascendance-of-a-bookworm/images/6/6f/LN_P1V1-CoverEN.jpg/revision/latest/scale-to-width-down/1000?cb=20210416220322",
+                "img": "/bookImages/aob1_1.png",
                 "name": "Part 1 Volume 1",
                 "description": "A certain college girl who's loved books ever since she was a little girl dies in an accident and is reborn in another world she knows nothing about. She is now Myne, the sickly five-year-old daughter of a poor soldier. To make things worse, the world she's been reborn in has a very low literacy rate and books mostly don't exist. She'd have to pay an enormous amount of money to buy one. Myne resolves herself: If there aren't any books, she'll just have to make them! Her goal is to become a librarian. This story begins with her quest to make books so she can live surrounded by them! Dive into this biblio-fantasy written for book lovers and bookworms!",
                 "downloadLink": ""
@@ -208,7 +208,7 @@
         "price": "₹396.42"
     },
     {
-        "img": "https://static.wikia.nocookie.net/tensei-shitara-slime-datta-ken/images/0/09/Light_Novel_Volume_1_EN.jpg/revision/latest/scale-to-width-down/1000?cb=20181012112755",
+        "img": "/bookImages/tensura_1.png",
         "genre": [
             "Isekai",
             "Fantasy",
@@ -222,7 +222,7 @@
         "author": "Fuse",
         "volumes": [
             {
-                "img": "https://static.wikia.nocookie.net/tensei-shitara-slime-datta-ken/images/0/09/Light_Novel_Volume_1_EN.jpg/revision/latest/scale-to-width-down/1000?cb=20181012112755",
+                "img": "/bookImages/tensura_1.png",
                 "name": "Volume 1",
                 "description": "Lonely thirty-seven-year-old Satoru Mikami is stuck in a dead-end job, unhappy with his mundane life, but after dying at the hands of a robber, he awakens to a fresh start in a fantasy realm…as a slime monster! As he acclimates to his goopy new existence, his exploits with the other monsters set off a chain of events that will change his new world forever!",
                 "downloadLink": ""
@@ -345,14 +345,14 @@
         "price": "₹382.60"
     },
     {
-        "img": "https://static.wikia.nocookie.net/the-great-cleric/images/b/b6/The_Great_Cleric_LN1_Cover.png/revision/latest/scale-to-width-down/1000?cb=20221209232957",
+        "img": "/bookImages/cleric_1.png",
         "genre": ["Isekai", "Fantasy", "Action", "Magic"],
         "title": "The Great Cleric",
         "synopsis": "One moment, a certain salaryman is on cloud nine, that promotion finally within his grasp, and the next, he’s keeled over pain, and that was all she wrote. Luckily for him, fate had a bit more to say. A world of magic, monsters, and other such life-shortening entities await his newly reincarnated self for a second shot at life. With nothing but his past-life experiences and sharp business skills to guide him in the foreign lands of Galdardia, he takes up the name Luciel and vows that his (next) demise will be from naught but old age. And what better way to avoid a(nother) gruesome death, than by taking up a nice, cushy job as a healer? But getting by in another world doesn’t come easy, or cheap. It’ll take a lot of blood, sweat, and tears to hone the skills he needs to make his way. But make it he will...or die (again) trying!",
         "author": "Broccoli Lion",
         "volumes": [
             {
-                "img": "https://static.wikia.nocookie.net/the-great-cleric/images/b/b6/The_Great_Cleric_LN1_Cover.png/revision/latest/scale-to-width-down/1000?cb=20221209232957",
+                "img": "/bookImages/cleric_1.png",
                 "name": "Volume 1",
                 "description": "One moment, a certain salaryman is on cloud nine, that promotion finally within his grasp, and the next, he’s keeled over pain, and that was all she wrote. Luckily for him, fate had a bit more to say. A world of magic, monsters, and other such life-shortening entities await his newly reincarnated self for a second shot at life. With nothing but his past-life experiences and sharp business skills to guide him in the foreign lands of Galdardia, he takes up the name Luciel and vows that his (next) demise will be from naught but old age. And what better way to avoid a(nother) gruesome death, than by taking up a nice, cushy job as a healer? But getting by in another world doesn’t come easy, or cheap. It’ll take a lot of blood, sweat, and tears to hone the skills he needs to make his way. But make it he will...or die (again) trying!",
                 "downloadLink": ""
@@ -421,7 +421,7 @@
         "price": "₹359.56"
     },
     {
-        "img": "https://static.wikia.nocookie.net/tsukigamichibikuisekaidouchuu/images/b/b3/TsukiMichi-LN-JP-v01-Cover.png/revision/latest?cb=20240302132440",
+        "img": "/bookImages/tsukimichi_1.png",
         "genre": [
             "Isekai",
             "Fantasy",
@@ -435,37 +435,37 @@
         "author": "Azumi Kei",
         "volumes": [
             {
-                "img": "https://static.wikia.nocookie.net/tsukigamichibikuisekaidouchuu/images/b/b3/TsukiMichi-LN-JP-v01-Cover.png/revision/latest?cb=20240302132440",
+                "img": "/bookImages/tsukimichi_1.png",
                 "name": "Volume 1",
                 "description": "Makoto Misumi was an average, everyday high schooler, who found himself shipped off to another world at his parents’ whims. Upon arrival, however, he’s insulted by the Goddess for being too ugly and thrown into a desolate wasteland. He frantically searches for human warmth and connection, but can find nothing but monsters and inhuman settlers. When he finally meets companions he can trust, they turn out to be a pair of powerful perverts in a former dragon and a former giant spider! His high-octane, incredibly misfortunate trek through this foreign world has only just begun!",
                 "downloadLink": ""
             },
             {
-                "img": "https://static.wikia.nocookie.net/tsukigamichibikuisekaidouchuu/images/c/c2/TsukiMichi-LN-JP-v02-Cover.png/revision/latest?cb=20200617142646",
+                "img": "/bookImages/tsukimichi_2.png",
                 "name": "Volume 2",
                 "description": "After braving the perilous 'End of the World', teeming with monsters, Makoto seeks to establish himself as a merchant. His first step? Making contact with Rembrandt, a leading merchant who holds sway over the town. Yet, Makoto discovers a dark shadow looming over Rembrandt's family—a severe curse. The trials facing the compelling, yet unfortunate, Makoto Misumi are far from concluded. Rise, residents! Additionally, this volume features an exciting special section: a martial arts tournament to crown the number one fighter in the subspace!",
                 "downloadLink": ""
             },
             {
-                "img": "https://static.wikia.nocookie.net/tsukigamichibikuisekaidouchuu/images/0/03/TsukiMichi-LN-JP-v03-Cover.png/revision/latest?cb=20200617142647",
+                "img": "/bookImages/tsukimichi_3.png",
                 "name": "Volume 3",
                 "description": "In a world where he was suddenly summoned, ordinary high school student Makoto continues his journey with his non-human companions, a former dragon and a former spider. The beginning of his trials started when he encountered a 'Forest Ogre'—a demi-human species with an elf-like appearance that dwells in forests—near the city of Tsige, where they were staying during their travels. The unfortunate hero who attracts trouble, Makoto Misumi's hardships reach their peak here! Included is a special newly written story depicting the struggles of Rembrandt, the greatest merchant in Tsige, as he works hard for Makoto, who has established a trading company!",
                 "downloadLink": ""
             },
             {
-                "img": "https://static.wikia.nocookie.net/tsukigamichibikuisekaidouchuu/images/c/cd/TsukiMichi-LN-JP-v04-Cover.png/revision/latest?cb=20200617142648",
+                "img": "/bookImages/tsukimichi_4.png",
                 "name": "Volume 4",
                 "description": "Makoto Misumi, an ordinary high school student, finds himself suddenly transported to another world. Having resolved a series of conflicts in Tsige, he now sets his sights on the Academy City of Rotsgard. However, his journey takes an unexpected turn when he loses consciousness and is kidnapped by unknown forces. He awakens in the midst of a battlefield, where a mysterious woman with a fierce smile stands before him, poised to strike with her massive sword. Surrounded by chaos, Makoto must navigate this perilous situation and overcome the greatest danger he has faced yet. Will Makoto, the unlucky hero who seems to attract trouble, manage to survive this dire predicament?",
                 "downloadLink": ""
             },
             {
-                "img": "https://static.wikia.nocookie.net/tsukigamichibikuisekaidouchuu/images/3/38/TsukiMichi-LN-JP-v05-Cover.png/revision/latest?cb=20200617142648",
+                "img": "/bookImages/tsukimichi_5.png",
                 "name": "Volume 5",
                 "description": "After countless struggles, Makoto, an ordinary high school student, reaches his long-sought destination: the academy city of Rotsgard. His goal is simple—to learn more about this strange new world by enrolling in its famous academy. But things don’t go as planned. Instead of an entrance exam, Makoto finds himself taking a test meant for teacher candidates! And so begins the unpredictable and often chaotic school life of Misumi Makoto, a young man whose knack for attracting trouble shows no signs of slowing down.",
                 "downloadLink": ""
             },
             {
-                "img": "https://static.wikia.nocookie.net/tsukigamichibikuisekaidouchuu/images/c/c4/TsukiMichi-LN-JP-v06-Cover.png/revision/latest?cb=20200617142649",
+                "img": "/bookImages/tsukimichi_6.png",
                 "name": "Volume 6",
                 "description": "After overcoming various hardships, Makoto is an ordinary high school student who finally reaches his destination, the academic city of Lottsgard. He was planning to enroll as a student at a 'school' that existed in this land in order to expand his knowledge of other worlds. However, the test that he actually took was not an entrance exam, but a teacher employment exam for some reason. The strange school life of Makoto Fukasumi, a disappointing child who attracts trouble, begins!!",
                 "downloadLink": ""

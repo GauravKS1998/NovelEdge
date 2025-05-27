@@ -1,18 +1,15 @@
 import React from "react";
 
 function Cards(props) {
-    let { item, key } = props;
+    let { item } = props;
 
     return (
-        <div
-            key={key}
-            className=" grid justify-center mt-3 md:mt-5 md:mb-7 space-x-4 pl-3 pr-3 pb-4"
-        >
-            <div className="card bg-base-100 w-full h-full shadow-lg rounded-2xl border">
+        <div className=" grid justify-center mt-3 md:mt-5 md:mb-0 space-x-4 pl-3 pr-3 pb-4">
+            <div className="card bg-base-100 w-full h-max shadow-lg rounded-2xl hover:scale-105 duration-200 transition ease-linear">
                 <figure>
                     <img src={item.img} alt={item.title} className=" w-full" />
                 </figure>
-                <div className="card-body">
+                <div className="card-body space-y-2 grid content-start">
                     <h2 className="card-title">{item.title}</h2>
                     <p>
                         {item.synopsis?.length > 120
