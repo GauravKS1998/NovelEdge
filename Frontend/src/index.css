@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Lexend+Giga:wght@100..900&family=Poppins:wght@500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+.logo_name {
+    font-family: "Lexend Giga", sans-serif;
+}
+
+.anchor_full li a {
+    padding: 8px 15px;
+    border-radius: 10px;
+}
+.anchor_full li a:hover {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.379) inset;
+    background-color: transparent;
+}
