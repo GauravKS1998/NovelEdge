@@ -26,9 +26,12 @@ body {
     width: 100%;
     display: grid;
     grid-template-columns: 90%;
+    background-color: white;
+    color: black;
     justify-content: center;
     gap: 3vh;
 }
+
 .input_section {
     width: 100%;
     display: grid;

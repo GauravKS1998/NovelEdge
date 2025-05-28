@@ -92,7 +92,7 @@ function Navbar() {
                             </ul>
                         </div>
                         <a className=" text-2xl font-bold cursor-pointer">
-                            <p className=" hidden md:block logo text-indigo-600">
+                            <p className=" text-sm md:text-xl logo text-indigo-600">
                                 NOVELEDGE
                             </p>
                         </a>
