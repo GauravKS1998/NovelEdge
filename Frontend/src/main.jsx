@@ -6,6 +6,8 @@ import { BrowserRouter } from "react-router";
 
 createRoot(document.getElementById("root")).render(
     <BrowserRouter>
-        <App />
+        <div className="dark:bg-[#1D232A] dark:text-white bg-white text-black">
+            <App />
+        </div>
     </BrowserRouter>
 );

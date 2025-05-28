@@ -9,7 +9,7 @@ function Banner() {
                     <div className=" grid gap-12">
                         <h1 className=" text-4xl font-bold">
                             Hello, Welcome to{" "}
-                            <span className=" text-red-400 logo_name">
+                            <span className=" text-indigo-600 logo_name logo">
                                 NOVELEDGE
                             </span>
                         </h1>
@@ -24,7 +24,10 @@ function Banner() {
                                 is a new world waiting to welcome you.
                             </p>
                         </span>
-                        <label className="input w-full">
+                        <label
+                            className="input w-full bg-transparent border-gray-500"
+                            style={{ outline: "none" }}
+                        >
                             <b className=" text-sm text-gray-500">
                                 <FaEnvelope />
                             </b>
@@ -35,7 +38,7 @@ function Banner() {
                             />
                         </label>
                     </div>
-                    <button className="btn btn-secondary mt-6">
+                    <button className="btn mt-6 py-5 px-4 cursor-pointer bg-indigo-600 border-none">
                         Secondary
                     </button>
                 </div>

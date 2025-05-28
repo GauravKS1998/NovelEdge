@@ -9,7 +9,7 @@ function Footer() {
         <>
             <div>
                 <hr />
-                <footer className="footer footer-horizontal footer-center text-base-content rounded p-10">
+                <footer className="footer footer-horizontal footer-center text-base-content rounded p-10 dark:text-white text-black">
                     <nav className="grid grid-flow-col gap-4">
                         <a className="link link-hover">Home</a>
                         <a className="link link-hover">Books</a>

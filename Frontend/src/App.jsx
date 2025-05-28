@@ -6,10 +6,12 @@ import { Route, Routes } from "react-router";
 function App() {
     return (
         <>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/books" element={<Books />} />
-            </Routes>
+            <div>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/books" element={<Books />} />
+                </Routes>
+            </div>
         </>
     );
 }
