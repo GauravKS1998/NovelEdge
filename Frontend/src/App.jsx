@@ -3,6 +3,7 @@ import Home from "./Home/Home";
 import Books from "./Books/Books";
 import { Route, Routes } from "react-router";
 import Signup from "./Components/Signup";
+import Contact from "./Contact/Contact";
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/books" element={<Books />} />
                     <Route path="/signup" element={<Signup />} />
+                    <Route path="/contact" element={<Contact />} />
                 </Routes>
             </div>
         </>

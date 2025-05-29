@@ -43,10 +43,7 @@ function Navbar() {
                 <a href="/books">Books</a>
             </li>
             <li>
-                <a>Contact</a>
-            </li>
-            <li>
-                <a>About</a>
+                <a href="/contact">Contact</a>
             </li>
         </>
     );
@@ -54,7 +51,7 @@ function Navbar() {
     return (
         <>
             <div
-                className={` max-w-screen-2xl container mx-auto md:px-20 px-4 relative left-0 top-0 right-0 z-50 dark:bg-[#1D232A] dark:text-white ${
+                className={` max-w-screen-2xl container mx-auto md:px-20 px-4 relative left-0 top-0 right-0 z-50 dark:bg-[#1D232A] dark:text-white bg-white ${
                     sticky
                         ? "sticky shadow-md duration-300 transition-all ease-in-out"
                         : ""
@@ -141,7 +138,7 @@ function Navbar() {
                         </label>
                         <div>
                             <a
-                                className=" bg-black text-white px-4 py-2 rounded-md hover:bg-slate-800 duration-300 cursor-pointer"
+                                className=" bg-black text-white px-4 py-2 rounded-md hover:bg-indigo-600 duration-300 cursor-pointer"
                                 onClick={() =>
                                     document.getElementById("login").showModal()
                                 }

@@ -67,7 +67,7 @@ function Login() {
                                     })}
                                 />
                                 <span
-                                    className=" h-full flex items-center px-3 cursor-pointer border-l border-gray-500"
+                                    className=" h-full flex items-center px-3 border-l cursor-pointer border-gray-500"
                                     onClick={() => setPwVisible(!pwVisible)}
                                 >
                                     {pwVisible ? <FaEyeSlash /> : <FaEye />}

@@ -29,7 +29,7 @@ function AllBooks() {
                     />
                     <IoSearchOutline className="text-lg text-gray-500 cursor-pointer" />
                 </label>
-                <button className="ml-4 px-4 py-2 bg-black text-white rounded-md flex items-center gap-2">
+                <button className="ml-4 px-4 py-2 bg-black text-white rounded-md flex items-center gap-2 hover:bg-indigo-600 duration-200">
                     <IoFilter className="text-lg" />
                     Filter
                 </button>
