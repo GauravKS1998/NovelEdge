@@ -1,62 +1,107 @@
 import React, { useState } from "react";
-import { Link } from "react-router";
-import { FaEye } from "react-icons/fa";
-import { FaEyeSlash } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useForm } from "react-hook-form";
 
 function Login() {
-    const [pwVisisble, setPwVisible] = useState(false);
+    const [pwVisible, setPwVisible] = useState(false);
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
+
+    const onSubmit = (data) => {
+        console.log("Login Data:", data);
+        // Optionally close modal after login
+        const dialog = document.getElementById("login");
+        if (dialog) dialog.close();
+    };
+
     return (
-        <>
-            <div className="">
-                <dialog id="login" className="modal">
-                    <div className="modal-box dark:bg-[#1D232A] dark:text-white grid gap-5">
-                        <form method="dialog">
-                            {/* if there is a button in form, it will close the modal */}
-                            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-                                ✕
-                            </button>
-                        </form>
-                        <h3 className="font-bold text-lg text-black dark:text-white">
-                            Login
-                        </h3>
-                        <div className="input_section">
+        <dialog id="login" className="modal">
+            <div className="modal-box dark:bg-[#1D232A] dark:text-white grid gap-5 relative">
+                {/* Close Button */}
+                <form method="dialog">
+                    <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-black dark:text-white hover:text-white">
+                        ✕
+                    </button>
+                </form>
+
+                <form
+                    onSubmit={handleSubmit(onSubmit)}
+                    className="w-full grid gap-[3vh] mt-3"
+                >
+                    <h3 className="font-bold text-2xl text-black dark:text-white">
+                        Login
+                    </h3>
+
+                    <div className="input_section grid gap-4">
+                        {/* Email */}
+                        <div>
                             <input
                                 type="email"
                                 placeholder="Enter Email"
-                                className=" h-10 w-full border border-gray-500 text-black dark:text-white bg-transparent rounded-[5px] px-4 text-sm"
-                                style={{ outline: "none" }}
+                                className="h-10 w-full border border-gray-500 text-black dark:text-white bg-transparent rounded-[5px] px-4 text-sm outline-none"
+                                {...register("email", {
+                                    required: "Email is required",
+                                })}
                             />
-                            <span className=" w-full border border-gray-500 text-black dark:text-white flex items-center bg-transparent rounded-[5px]">
+                            {errors.email && (
+                                <p className="text-sm text-red-600">
+                                    {errors.email.message}
+                                </p>
+                            )}
+                        </div>
+
+                        {/* Password */}
+                        <div>
+                            <div className="h-10 w-full flex items-center border border-gray-500 text-black dark:text-white bg-transparent rounded-[5px]">
                                 <input
-                                    type={pwVisisble ? "text" : "password"}
-                                    placeholder="Enter password"
-                                    className=" h-10 w-full border-none bg-transparent px-4 text-sm"
-                                    style={{ outline: "none" }}
+                                    type={pwVisible ? "text" : "password"}
+                                    placeholder="Enter Password"
+                                    className="h-10 w-full px-4 text-sm bg-transparent outline-none"
+                                    {...register("password", {
+                                        required: "Password is required",
+                                    })}
                                 />
                                 <span
-                                    className=" flex items-center px-3 h-full outline-none border-l border-gray-500 cursor-pointer"
-                                    onClick={() => setPwVisible(!pwVisisble)}
+                                    className=" h-full flex items-center px-3 cursor-pointer border-l border-gray-500"
+                                    onClick={() => setPwVisible(!pwVisible)}
                                 >
-                                    {pwVisisble ? <FaEyeSlash /> : <FaEye />}
+                                    {pwVisible ? <FaEyeSlash /> : <FaEye />}
                                 </span>
-                            </span>
-                            <p className="text-sm text-gray-400 justify-self-end">
-                                Not registered?{" "}
-                                <Link
-                                    to="/signup"
-                                    className="text-blue-500 cursor-pointer"
-                                >
-                                    Signup
-                                </Link>
-                            </p>
-                            <button className="btn justify-self-start px-6 py-5 bg-indigo-600 border-none">
-                                Login
-                            </button>
+                            </div>
+                            {errors.password && (
+                                <p className="text-sm text-red-600">
+                                    {errors.password.message}
+                                </p>
+                            )}
                         </div>
+
+                        {/* Signup Link */}
+                        <p className="text-sm text-gray-400 justify-self-end">
+                            Not registered?{" "}
+                            <Link
+                                to="/signup"
+                                className="text-blue-500 hover:underline"
+                            >
+                                Signup
+                            </Link>
+                        </p>
+
+                        {/* Submit Button */}
+                        <button
+                            type="submit"
+                            className="btn justify-self-start px-6 py-3 bg-indigo-600 text-white border-none"
+                        >
+                            Login
+                        </button>
                     </div>
-                </dialog>
+                </form>
             </div>
-        </>
+        </dialog>
     );
 }
 

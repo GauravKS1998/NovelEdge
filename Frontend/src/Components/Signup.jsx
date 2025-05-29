@@ -1,112 +1,147 @@
 import React, { useState } from "react";
-import { Link } from "react-router";
-import { FaEye } from "react-icons/fa";
-import { FaEyeSlash } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useForm } from "react-hook-form";
 
 function Signup() {
-    const [pwVisisble, setPwVisible] = useState(false);
-    const [cpwVisisble, setCpwVisible] = useState(false);
-    const [pw, setPw] = useState("");
-    const [cPw, setCPw] = useState("");
+    const [pwVisible, setPwVisible] = useState(false);
+    const [cpwVisible, setCpwVisible] = useState(false);
 
-    function handleConfirmPw() {
-        if (pw === "") {
-            alert("Please Enter your password");
-        } else if (pw != cPw) {
-            alert("Password and Confirm Password should be same");
-        }
-    }
+    const {
+        register,
+        handleSubmit,
+        watch,
+        formState: { errors },
+    } = useForm();
 
-    function handleForm() {
-        handleConfirmPw();
-    }
+    const password = watch("password");
+
+    const onSubmit = (data) => {
+        console.log("Form submitted:", data);
+    };
 
     return (
-        <>
-            <div className=" min-h-screen w-full grid grid-cols-[85%] md:grid-cols-[50%] lg:grid-cols-[40%] xl:grid-cols-[30%] justify-center items-center">
-                <div className=" relative px-8 py-8 border rounded-xl shadow-md">
-                    <div className=" grid gap-5">
-                        <form method="dialog">
-                            {/* if there is a button in form, it will close the modal */}
-                            <Link
-                                to="/"
-                                className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-black dark:text-white hover:text-white"
-                            >
-                                ✕
-                            </Link>
-                        </form>
-                        <h3 className="font-bold text-lg text-black dark:text-white">
-                            Signup
-                        </h3>
-                        <form
-                            method="dialog"
-                            className="input_section"
-                            onSubmit={handleForm}
-                        >
-                            <input
-                                type="text"
-                                placeholder="Enter Fullname"
-                                className=" h-10 w-full border border-gray-500 text-black dark:text-white bg-transparent rounded-[5px] px-4 text-sm"
-                                style={{ outline: "none" }}
-                            />
-                            <input
-                                type="email"
-                                placeholder="Enter Email"
-                                className=" h-10 w-full border border-gray-500 text-black dark:text-white bg-transparent rounded-[5px] px-4 text-sm"
-                                style={{ outline: "none" }}
-                            />
-                            <span className=" w-full border border-gray-500 text-black dark:text-white flex items-center bg-transparent rounded-[5px] overflow-hidden">
-                                <input
-                                    type={pwVisisble ? "text" : "password"}
-                                    placeholder="Enter password"
-                                    className=" h-10 w-full border-none bg-transparent px-4 text-sm"
-                                    style={{ outline: "none" }}
-                                    onInput={(e) => setPw(e.target.value)}
-                                />
-                                <span
-                                    className=" flex items-center px-3 h-full outline-none border-l border-gray-500 cursor-pointer"
-                                    onClick={() => setPwVisible(!pwVisisble)}
-                                >
-                                    {pwVisisble ? <FaEyeSlash /> : <FaEye />}
-                                </span>
-                            </span>
-                            <span className=" w-full border border-gray-500 text-black dark:text-white flex items-center bg-transparent rounded-[5px]">
-                                <input
-                                    type={cpwVisisble ? "text" : "password"}
-                                    placeholder="Confirm password"
-                                    className=" h-10 w-full border-none bg-transparent px-4 text-sm"
-                                    style={{ outline: "none" }}
-                                    onInput={(e) => setCPw(e.target.value)}
-                                />
-                                <button
-                                    className=" flex items-center px-3 h-full outline-none border-l border-gray-500 cursor-pointer"
-                                    onClick={() => setCpwVisible(!cpwVisisble)}
-                                >
-                                    {cpwVisisble ? <FaEyeSlash /> : <FaEye />}
-                                </button>
-                            </span>
-                            <p className="text-sm text-gray-400 justify-self-end">
-                                Have an account?{" "}
-                                <Link
-                                    to="/"
-                                    className="text-blue-500 cursor-pointer"
-                                    onClick={() =>
-                                        document
-                                            .getElementById("login")
-                                            .showModal()
-                                    }
-                                >
-                                    Login
-                                </Link>
+        <div className="min-h-screen w-full grid grid-cols-[85%] md:grid-cols-[50%] lg:grid-cols-[40%] xl:grid-cols-[30%] justify-center items-center dark:bg-[#262B33]">
+            <div className="relative px-8 py-8 rounded-xl shadow-md bg-white dark:bg-[#1D232A] dark:text-white">
+                <form
+                    onSubmit={handleSubmit(onSubmit)}
+                    className="w-full grid gap-[3vh] mt-3"
+                >
+                    <Link
+                        to="/"
+                        className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-black dark:text-white hover:text-white"
+                    >
+                        ✕
+                    </Link>
+                    <h3 className="font-bold text-2xl text-black dark:text-white">
+                        Signup
+                    </h3>
+
+                    {/* Full Name */}
+                    <div>
+                        <input
+                            type="text"
+                            placeholder="Enter Fullname"
+                            className="h-10 w-full border border-gray-500 text-black dark:text-white bg-transparent rounded px-4 text-sm outline-none"
+                            {...register("name", {
+                                required: "Full name is required",
+                            })}
+                        />
+                        {errors.name && (
+                            <p className="text-sm text-red-600">
+                                {errors.name.message}
                             </p>
-                            <button className="btn justify-self-start px-6 py-5 bg-indigo-600 border-none">
-                                Signup
-                            </button>
-                        </form>
+                        )}
                     </div>
-                </div>
+
+                    {/* Email */}
+                    <div>
+                        <input
+                            type="email"
+                            placeholder="Enter Email"
+                            className="h-10 w-full border border-gray-500 text-black dark:text-white bg-transparent rounded px-4 text-sm outline-none"
+                            {...register("email", {
+                                required: "Email is required",
+                            })}
+                        />
+                        {errors.email && (
+                            <p className="text-sm text-red-600">
+                                {errors.email.message}
+                            </p>
+                        )}
+                    </div>
+
+                    {/* Password */}
+                    <div>
+                        <div className="h-10 w-full flex items-center border border-gray-500 text-black dark:text-white bg-transparent rounded">
+                            <input
+                                type={pwVisible ? "text" : "password"}
+                                placeholder="Enter Password"
+                                className="h-full w-full px-4 text-sm bg-transparent outline-none"
+                                {...register("password", {
+                                    required: "Password is required",
+                                })}
+                            />
+                            <span
+                                className=" h-full flex items-center px-3 cursor-pointer border-l border-gray-500"
+                                onClick={() => setPwVisible(!pwVisible)}
+                            >
+                                {pwVisible ? <FaEyeSlash /> : <FaEye />}
+                            </span>
+                        </div>
+                        {errors.password && (
+                            <p className="text-sm text-red-600">
+                                {errors.password.message}
+                            </p>
+                        )}
+                    </div>
+
+                    {/* Confirm Password */}
+                    <div>
+                        <div className="h-10 w-full flex items-center border border-gray-500 text-black dark:text-white bg-transparent rounded">
+                            <input
+                                type={cpwVisible ? "text" : "password"}
+                                placeholder="Confirm Password"
+                                className="h-full w-full px-4 text-sm bg-transparent outline-none"
+                                {...register("cPassword", {
+                                    required: "Please confirm your password",
+                                    validate: (value) =>
+                                        value === password ||
+                                        "Passwords do not match",
+                                })}
+                            />
+                            <span
+                                className=" h-full flex items-center px-3 cursor-pointer border-l border-gray-500"
+                                onClick={() => setCpwVisible(!cpwVisible)}
+                            >
+                                {cpwVisible ? <FaEyeSlash /> : <FaEye />}
+                            </span>
+                        </div>
+                        {errors.cPassword && (
+                            <p className="text-sm text-red-600">
+                                {errors.cPassword.message}
+                            </p>
+                        )}
+                    </div>
+
+                    {/* Login Link */}
+                    <p className="text-sm text-gray-400 justify-self-end">
+                        Have an account?{" "}
+                        <Link to="/" className="text-blue-500 hover:underline">
+                            Login
+                        </Link>
+                    </p>
+
+                    {/* Submit Button */}
+                    <button
+                        type="submit"
+                        className=" btn justify-self-start px-6 py-3 bg-indigo-600 text-white border-none"
+                    >
+                        Signup
+                    </button>
+                </form>
             </div>
-        </>
+        </div>
     );
 }
 

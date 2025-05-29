@@ -4,7 +4,7 @@ function Cards(props) {
     let { item } = props;
 
     return (
-        <div className=" grid justify-center mt-3 md:mt-5 md:mb-0 space-x-4 pl-3 pr-3 pb-4">
+        <div className=" grid justify-center mt-3 md:mt-5 md:mb-0 space-x-4 pl-3 pr-3 pb-8">
             <div className="card bg-base-100 w-full h-max shadow-lg rounded-2xl hover:scale-105 duration-200 transition ease-linear dark:bg-[#1D232A] dark:text-white bg-white">
                 <figure>
                     <img src={item.img} alt={item.title} className=" w-full" />
