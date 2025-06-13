@@ -1,9 +1,16 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import cors from "cors";
+
 import bookRoute from "./routes/book.routes.js";
+import userRoute from "./routes/user.routes.js";
 
 const app = express();
+
+// connecting middleware
+app.use(cors());
+app.use(express.json());
 
 dotenv.config();
 
@@ -23,6 +30,7 @@ try {
 
 // defining routes
 app.use("/book", bookRoute);
+app.use("/user", userRoute);
 
 // displaying port status
 app.listen(port, () => {

@@ -1,21 +1,36 @@
 import React, { useState } from "react";
 import { IoSearchOutline, IoFilter } from "react-icons/io5";
-import Books from "../../public/Books.json";
 import Cards from "./Cards";
+import axios from "axios";
+import { useEffect } from "react";
 
 const ITEMS_PER_PAGE = 16;
 
 function AllBooks() {
+    const [book, setBook] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
 
-    const totalPages = Math.ceil(Books.length / ITEMS_PER_PAGE);
+    const totalPages = Math.ceil(book.length / ITEMS_PER_PAGE);
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-    const currentBooks = Books.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+    const currentBooks = book.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
     const handlePageChange = (page) => {
         setCurrentPage(page);
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
+
+    useEffect(() => {
+        const getBooks = async () => {
+            try {
+                const res = await axios.get("http://localhost:5717/book");
+                console.log(res.data);
+                setBook(res.data);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        getBooks();
+    }, []);
 
     return (
         <div className="max-w-screen-2xl container mx-auto md:px-20 px-4">
