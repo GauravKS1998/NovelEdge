@@ -1,29 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { IoSearchOutline, IoFilter } from "react-icons/io5";
 import Cards from "./Cards";
 import axios from "axios";
-import { useEffect } from "react";
 
 const ITEMS_PER_PAGE = 16;
 
 function AllBooks() {
     const [book, setBook] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1);
+    const [searchQuery, setSearchQuery] = useState("");
+    const [currentPage, setCurrentPage] = useState(
+        () => Number(sessionStorage.getItem("allBooksPage")) || 1
+    );
 
-    const totalPages = Math.ceil(book.length / ITEMS_PER_PAGE);
-    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-    const currentBooks = book.slice(startIndex, startIndex + ITEMS_PER_PAGE);
-
-    const handlePageChange = (page) => {
-        setCurrentPage(page);
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    };
-
+    // Fetch books on mount
     useEffect(() => {
         const getBooks = async () => {
             try {
                 const res = await axios.get("http://localhost:5717/book");
-                console.log(res.data);
                 setBook(res.data);
             } catch (error) {
                 console.log(error);
@@ -31,6 +24,39 @@ function AllBooks() {
         };
         getBooks();
     }, []);
+
+    // Save current page to sessionStorage
+    useEffect(() => {
+        sessionStorage.setItem("allBooksPage", currentPage);
+    }, [currentPage]);
+
+    // Filtered books based on search
+    const filteredBooks = book.filter(
+        (b) =>
+            b.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            b.genre
+                ?.join(" ")
+                .toLowerCase()
+                .includes(searchQuery.toLowerCase()) ||
+            b.synopsis?.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    const totalPages = Math.ceil(filteredBooks.length / ITEMS_PER_PAGE);
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    const currentBooks = filteredBooks.slice(
+        startIndex,
+        startIndex + ITEMS_PER_PAGE
+    );
+
+    const handlePageChange = (page) => {
+        setCurrentPage(page);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+    const handleSearch = (e) => {
+        setSearchQuery(e.target.value);
+        setCurrentPage(1); // Reset to page 1 on new search
+    };
 
     return (
         <div className="max-w-screen-2xl container mx-auto md:px-20 px-4">
@@ -40,6 +66,8 @@ function AllBooks() {
                     <input
                         type="search"
                         placeholder="Enter Book"
+                        value={searchQuery}
+                        onChange={handleSearch}
                         className="bg-transparent outline-none flex-grow"
                     />
                     <IoSearchOutline className="text-lg text-gray-500 cursor-pointer" />

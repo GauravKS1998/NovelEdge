@@ -4,13 +4,16 @@ import "./index.css";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router";
 import AuthProvider from "./Context/AuthProvider.jsx";
+import { BookProvider } from "./Context/BookContext.jsx";
 
 createRoot(document.getElementById("root")).render(
     <BrowserRouter>
-        <AuthProvider>
-            <div className="dark:bg-[#1D232A] dark:text-white bg-white text-black">
-                <App />
-            </div>
-        </AuthProvider>
+        <BookProvider>
+            <AuthProvider>
+                <div className="dark:bg-[#1D232A] dark:text-white bg-white text-black">
+                    <App />
+                </div>
+            </AuthProvider>
+        </BookProvider>
     </BrowserRouter>
 );
