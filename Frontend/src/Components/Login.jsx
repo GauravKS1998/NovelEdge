@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 function Login() {
     const [pwVisible, setPwVisible] = useState(false);
@@ -12,11 +14,36 @@ function Login() {
         formState: { errors },
     } = useForm();
 
-    const onSubmit = (data) => {
-        console.log("Login Data:", data);
-        // Optionally close modal after login
-        const dialog = document.getElementById("login");
-        if (dialog) dialog.close();
+    const onSubmit = async (data) => {
+        const userInfo = {
+            email: data.email,
+            password: data.password,
+        };
+        await axios
+            .post("http://localhost:5717/user/login", userInfo)
+            .then((res) => {
+                console.log(res.data);
+                if (res.data) {
+                    toast.success("Login Successfull!");
+
+                    // Close modal after login
+                    document.getElementById("login").close();
+                    setTimeout(() => {
+                        window.location.reload();
+                        localStorage.setItem(
+                            "Users",
+                            JSON.stringify(res.data.user)
+                        );
+                    }, 1000);
+                }
+            })
+            .catch((err) => {
+                if (err.response) {
+                    console.log(err.response.data.message);
+                    toast.error(err.response.data.message);
+                    setTimeout(() => {}, 2000);
+                }
+            });
     };
 
     return (

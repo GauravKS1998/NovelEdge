@@ -1,11 +1,17 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 function Signup() {
     const [pwVisible, setPwVisible] = useState(false);
     const [cpwVisible, setCpwVisible] = useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const from = location.state?.from?.pathname || "/";
 
     const {
         register,
@@ -16,8 +22,28 @@ function Signup() {
 
     const password = watch("password");
 
-    const onSubmit = (data) => {
-        console.log("Form submitted:", data);
+    const onSubmit = async (data) => {
+        const userInfo = {
+            fullname: data.fullname,
+            email: data.email,
+            password: data.password,
+        };
+        await axios
+            .post("http://localhost:5717/user/signup", userInfo)
+            .then((res) => {
+                console.log(res.data);
+                if (res.data) {
+                    toast.success("Signup Successfull");
+                    navigate(from, { replace: true });
+                }
+                localStorage.setItem("Users", JSON.stringify(res.data.user));
+            })
+            .catch((err) => {
+                if (err.response) {
+                    console.log(err.response.data.message);
+                    toast.error(err.response.data.message);
+                }
+            });
     };
 
     return (
@@ -43,13 +69,13 @@ function Signup() {
                             type="text"
                             placeholder="Enter Fullname"
                             className="h-10 w-full border border-gray-500 text-black dark:text-white bg-transparent rounded px-4 text-sm outline-none"
-                            {...register("name", {
+                            {...register("fullname", {
                                 required: "Full name is required",
                             })}
                         />
-                        {errors.name && (
+                        {errors.fullname && (
                             <p className="text-sm text-red-600">
-                                {errors.name.message}
+                                {errors.fullname.message}
                             </p>
                         )}
                     </div>
