@@ -1,126 +1,92 @@
 [
     {
-        "id": "All",
-        "name": "All"
-    },
-    {
-        "id": "Action",
         "name": "Action"
     },
     {
-        "id": "Adventure",
         "name": "Adventure"
     },
     {
-        "id": "Cars",
         "name": "Cars"
     },
     {
-        "id": "Comedy",
         "name": "Comedy"
     },
     {
-        "id": "Demons",
         "name": "Demons"
     },
     {
-        "id": "Drama",
         "name": "Drama"
     },
     {
-        "id": "Ecchi",
         "name": "Ecchi"
     },
     {
-        "id": "Fantasy",
         "name": "Fantasy"
     },
     {
-        "id": "Game",
         "name": "Game"
     },
     {
-        "id": "Harem",
         "name": "Harem"
     },
     {
-        "id": "Historical",
         "name": "Historical"
     },
     {
-        "id": "Horror",
         "name": "Horror"
     },
     {
-        "id": "Isekai",
         "name": "Isekai"
     },
     {
-        "id": "Kids",
         "name": "Kids"
     },
     {
-        "id": "Magic",
         "name": "Magic"
     },
     {
-        "id": "Martial_arts",
         "name": "Martial Arts"
     },
     {
-        "id": "Mecha",
         "name": "Mecha"
     },
     {
-        "id": "Military",
         "name": "Military"
     },
     {
-        "id": "Mystry",
         "name": "Mystry"
     },
     {
-        "id": "Psychological",
         "name": "Psychological"
     },
     {
-        "id": "Romance",
         "name": "Romance"
     },
     {
-        "id": "School",
         "name": "School"
     },
     {
-        "id": "Sci-Fi",
         "name": "Sci-Fi"
     },
     {
-        "id": "Slice_of_life",
         "name": "Slice of Life"
     },
     {
-        "id": "Space",
         "name": "Space"
     },
     {
-        "id": "Sports",
         "name": "Sports"
     },
     {
-        "id": "Super_Power",
         "name": "Super Power"
     },
     {
-        "id": "Supernatural",
         "name": "Supernatural"
     },
     {
-        "id": "Thriller",
         "name": "Thriller"
     },
     {
-        "id": "Vampire",
         "name": "Vampire"
     }
 ]

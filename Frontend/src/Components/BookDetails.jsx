@@ -75,7 +75,7 @@ function BookDetails() {
                             return (
                                 <div
                                     key={index}
-                                    className="volume border rounded-lg grid grid-cols-[20%_1fr_max-content] px-5 py-5 box-content gap-8 shadow-lg"
+                                    className="volume border rounded-lg grid md:grid-cols-[20%_1fr_max-content] px-5 py-5 box-content gap-8 shadow-lg"
                                 >
                                     {/* Volume Image */}
                                     <div>
@@ -92,7 +92,7 @@ function BookDetails() {
                                     {/* Volume Description */}
                                     <div className="grid gap-3">
                                         <h2 className="text-2xl font-bold font-mono">
-                                            {vol.title || `Volume ${index + 1}`}
+                                            {vol.name || `Volume ${index + 1}`}
                                         </h2>
                                         <p className="leading-6 text-sm font-light">
                                             {isExpanded
@@ -122,15 +122,21 @@ function BookDetails() {
                                         </button>
                                     </div>
 
-                                    {/* Download Button */}
+                                    {/* Download Button or Message */}
                                     <div className="justify-self-end flex items-start">
-                                        <a
-                                            href={vol.downloadLink}
-                                            className="btn py-3 px-4 bg-indigo-600 text-white border-none rounded-md shadow hover:bg-indigo-700 transition"
-                                            download
-                                        >
-                                            Download
-                                        </a>
+                                        {vol.downloadLink ? (
+                                            <a
+                                                href={vol.downloadLink}
+                                                className="btn py-3 px-4 bg-indigo-600 text-white border-none rounded-md shadow hover:bg-indigo-700 transition"
+                                                download
+                                            >
+                                                Download
+                                            </a>
+                                        ) : (
+                                            <p className="text-sm text-red-500 font-semibold">
+                                                Download not available
+                                            </p>
+                                        )}
                                     </div>
                                 </div>
                             );

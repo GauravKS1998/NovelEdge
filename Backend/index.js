@@ -3,36 +3,41 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
 
+// Route imports
 import bookRoute from "./routes/book.routes.js";
 import userRoute from "./routes/user.routes.js";
-
-const app = express();
-
-// connecting middleware
-app.use(cors());
-app.use(express.json());
+import genreRoute from "./routes/genre.routes.js"; // ✅ Import genre routes
 
 dotenv.config();
 
+const app = express();
 const port = process.env.PORT || 4000;
 const URI = process.env.MongoDBURI;
 
-// connect to MongoDB
-try {
-    mongoose.connect(URI, {
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// MongoDB Connection
+mongoose
+    .connect(URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-    });
-    console.log("Connected to MongoDB");
-} catch (error) {
-    console.error("Error connecting to MongoDB:", error);
-}
+    })
+    .then(() => console.log("✅ Connected to MongoDB"))
+    .catch((err) => console.error("❌ MongoDB connection error:", err));
 
-// defining routes
+// Routes
 app.use("/book", bookRoute);
 app.use("/user", userRoute);
+app.use("/genre", genreRoute); // ✅ Use genre route
 
-// displaying port status
+// Root Endpoint (optional)
+app.get("/", (req, res) => {
+    res.send("📚 Book Server is Running...");
+});
+
+// Server Listening
 app.listen(port, () => {
-    console.log(`Server is listening on port ${port}`);
+    console.log(`🚀 Server running at http://localhost:${port}`);
 });

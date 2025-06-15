@@ -4,9 +4,10 @@ import Books from "./Books/Books";
 import { Navigate, Route, Routes } from "react-router";
 import Signup from "./Components/Signup";
 import Contact from "./Contact/Contact";
+import BookDetailsPage from "./BookDetails/BookDetailsPage";
+import ErrorPage from "./Components/ErrorPage";
 import { Toaster } from "react-hot-toast";
 import { useAuth } from "./Context/AuthProvider";
-import BookDetailsPage from "./BookDetails/BookDetailsPage";
 
 function App() {
     const [authUser, setAuthUser] = useAuth();
@@ -26,6 +27,9 @@ function App() {
                     <Route path="/signup" element={<Signup />} />
                     <Route path="/book_details" element={<BookDetailsPage />} />
                     <Route path="/contact" element={<Contact />} />
+
+                    {/* 404 Error Page */}
+                    <Route path="*" element={<ErrorPage />} />
                 </Routes>
                 <Toaster />
             </div>
