@@ -11,28 +11,37 @@ function Footer() {
                 <hr />
                 <footer className="footer footer-horizontal footer-center text-base-content rounded p-10 dark:text-white text-black">
                     <nav className="grid grid-flow-col gap-4">
-                        <a className="link link-hover" href="/">
+                        <a
+                            className="link link-hover hover:text-indigo-600 transition duration-300"
+                            href="/"
+                        >
                             Home
                         </a>
-                        <a className="link link-hover" href="/books">
+                        <a
+                            className="link link-hover hover:text-indigo-600 transition duration-300"
+                            href="/books"
+                        >
                             Books
                         </a>
-                        <a className="link link-hover" href="/contact">
+                        <a
+                            className="link link-hover hover:text-indigo-600 transition duration-300"
+                            href="/contact"
+                        >
                             Contact
                         </a>
                     </nav>
                     <nav>
                         <div className="grid grid-flow-col gap-4">
-                            <a className=" text-xl">
+                            <a className=" text-xl cursor-pointer hover:text-indigo-600 transition duration-300">
                                 <FaXTwitter />
                             </a>
-                            <a className=" text-xl">
+                            <a className=" text-xl cursor-pointer hover:text-indigo-600 transition duration-300">
                                 <FaInstagram />
                             </a>
-                            <a className=" text-xl">
+                            <a className=" text-xl cursor-pointer hover:text-indigo-600 transition duration-300">
                                 <FaLinkedin />
                             </a>
-                            <a className=" text-xl">
+                            <a className=" text-xl cursor-pointer hover:text-indigo-600 transition duration-300">
                                 <FaGithub />
                             </a>
                         </div>

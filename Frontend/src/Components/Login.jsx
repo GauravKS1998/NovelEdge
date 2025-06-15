@@ -19,31 +19,49 @@ function Login() {
             email: data.email,
             password: data.password,
         };
-        await axios
-            .post("http://localhost:5717/user/login", userInfo)
-            .then((res) => {
-                console.log(res.data);
-                if (res.data) {
-                    toast.success("Login Successfull!");
+        try {
+            const res = await axios.post(
+                "http://localhost:5717/user/login",
+                userInfo
+            );
 
-                    // Close modal after login
-                    document.getElementById("login").close();
-                    setTimeout(() => {
-                        window.location.reload();
-                        localStorage.setItem(
-                            "Users",
-                            JSON.stringify(res.data.user)
-                        );
-                    }, 1000);
-                }
-            })
-            .catch((err) => {
-                if (err.response) {
-                    console.log(err.response.data.message);
+            if (res.data && res.data.user) {
+                toast.success("Login Successful!");
+
+                // Save user to localStorage
+                localStorage.setItem("Users", JSON.stringify(res.data.user));
+
+                // Close modal after login
+                document.getElementById("login").close();
+
+                setTimeout(() => {
+                    window.location.reload();
+                }, 1000);
+            } else {
+                toast.error("Invalid User");
+            }
+        } catch (err) {
+            if (
+                err.response &&
+                err.response.data &&
+                err.response.data.message
+            ) {
+                const message = err.response.data.message.toLowerCase();
+
+                if (
+                    message.includes("not found") ||
+                    message.includes("no user")
+                ) {
+                    toast.error("Invalid User");
+                } else if (message.includes("incorrect password")) {
+                    toast.error("Incorrect Password");
+                } else {
                     toast.error(err.response.data.message);
-                    setTimeout(() => {}, 2000);
                 }
-            });
+            } else {
+                toast.error("Something went wrong. Please try again.");
+            }
+        }
     };
 
     return (
