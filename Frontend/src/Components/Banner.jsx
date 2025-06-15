@@ -34,12 +34,12 @@ function Banner() {
                             <input
                                 type="text"
                                 className="grow"
-                                placeholder="index.php"
+                                placeholder="abc@gmail.com"
                             />
                         </label>
                     </div>
                     <button className="btn mt-6 py-5 px-4 cursor-pointer bg-indigo-600 border-none">
-                        Secondary
+                        Notify Me
                     </button>
                 </div>
                 <div className=" order-1 w-full md:w-1/2 grid justify-center content-center mt-12 md:mt-0">

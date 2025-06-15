@@ -6,7 +6,7 @@ import cors from "cors";
 // Route imports
 import bookRoute from "./routes/book.routes.js";
 import userRoute from "./routes/user.routes.js";
-import genreRoute from "./routes/genre.routes.js"; // ✅ Import genre routes
+import genreRoute from "./routes/genre.routes.js";
 
 dotenv.config();
 
@@ -30,7 +30,7 @@ mongoose
 // Routes
 app.use("/book", bookRoute);
 app.use("/user", userRoute);
-app.use("/genre", genreRoute); // ✅ Use genre route
+app.use("/genre", genreRoute);
 
 // Root Endpoint (optional)
 app.get("/", (req, res) => {
